@@ -157,28 +157,27 @@ if __name__ == "__main__":
 		
 		message_count += 1
 		variablesFB=floraBox.get_variables()
-
-		variablesFB[0].save_value({"value":message_dict["AACR 1"]})
-		variablesFB[1].save_value({"value":message_dict["AAHE 1"]})
-		variablesFB[2].save_value({"value":message_dict["AAHU 1"]})
-		variablesFB[3].save_value({"value":message_dict["AAVE 1"]})
-		variablesFB[4].save_value({"value":message_dict["ALMI 1"]})
-		variablesFB[5].save_value({"value":message_dict["ALPN 1"]})
-		variablesFB[6].save_value({"value":message_dict["ALPN 2"]})
-		#variablesFB[7].save_value({"value":message_dict["GEND"]}) 
-		#variablesFB[8].save_value({"value":message_dict["GTYP"]}) 
-		variablesFB[9].save_value({"value":message_dict["SACO 1"]})
-		variablesFB[10].save_value({"value":message_dict["SAHU 1"]})
-		variablesFB[11].save_value({"value":message_dict["SAHU 2"]})
-		variablesFB[12].save_value({"value":message_dict["SATM 1"]})
-		variablesFB[13].save_value({"value":message_dict["SATM 2"]})
-		variablesFB[14].save_value({"value":message_dict["SGSO 1"]})
-		variablesFB[15].save_value({"value":message_dict["SGWO 1"]})
-		variablesFB[16].save_value({"value":message_dict["SLIN 1"]})
-		variablesFB[17].save_value({"value":message_dict["SLPA 1"]})
-		variablesFB[18].save_value({"value":message_dict["SWEC 1"]})
-		variablesFB[19].save_value({"value":message_dict["SWPH 1"]})
-		variablesFB[20].save_value({"value":message_dict["SWTM 1"]})
+                api.save_collection([{"variable":variablesFB[0].id,"value":message_dict["AACR 1"]},
+                                     {"variable":variablesFB[1].id,"value":message_dict["AAHE 1"]},
+                                     {"variable":variablesFB[2].id,"value":message_dict["AAHU 1"]},
+                                     {"variable":variablesFB[3].id,"value":message_dict["AAVE 1"]},
+                                     {"variable":variablesFB[4].id,"value":message_dict["ALMI 1"]},
+                                     {"variable":variablesFB[5].id,"value":message_dict["ALPN 1"]},
+                                     {"variable":variablesFB[6].id,"value":message_dict["ALPN 2"]},
+                                     {"variable":variablesFB[7].id,"value":message_dict["GEND"]},
+                                     {"variable":variablesFB[8].id,"value":message_dict["GTYP"]},
+                                     {"variable":variablesFB[9].id,"value":message_dict["SACO 1"]},
+                                     {"variable":variablesFB[10].id,"value":message_dict["SAHU 1"]},
+                                     {"variable":variablesFB[11].id,"value":message_dict["SAHU 2"]},
+                                     {"variable":variablesFB[12].id,"value":message_dict["SATM 1"]},
+                                     {"variable":variablesFB[13].id,"value":message_dict["SATM 2"]},
+                                     {"variable":variablesFB[14].id,"value":message_dict["SGSO 1"]},
+                                     {"variable":variablesFB[15].id,"value":message_dict["SGWO 1"]},
+                                     {"variable":variablesFB[16].id,"value":message_dict["SLIN 1"]},
+                                     {"variable":variablesFB[17].id,"value":message_dict["SLPA 1"]},
+                                     {"variable":variablesFB[18].id,"value":message_dict["SWEC 1"]},
+                                     {"variable":variablesFB[19].id,"value":message_dict["SWPH 1"]},
+                                     {"variable":variablesFB[20].id,"value":message_dict["SWTM 1"]}])
 
 		print ("message:")
 		print ("",message)
@@ -193,4 +192,4 @@ if __name__ == "__main__":
 
 #    bot.run()
 
-
+{"AACR 1":1,"AAHE 1":2,"AAHU 1":3,"AAVE 1":4,"ALMI 1":5,"ALPN 1":6,"ALPN 2":7,"GEND":8,"GTYP":9,"SACO 1":10,"SAHU 1":11,"SAHU 2":12,"SATM 1":13,"SATM 2":14,"SGSO 1":15,"SGWO 1":16,"SLIN 1":18,"SLPA 1":17,"SWEC 1":19,"SWPH 1":20,"SWTM 1":21}
