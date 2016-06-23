@@ -1,0 +1,18 @@
+2016-06-22 23:38:30,084 :: root         :: INFO     :: Starting grodaemon!
+2016-06-22 23:38:30,085 :: root         :: DEBUG    :: Logging to /home/pi/Desktop/gro-controller/grodaemon.log
+2016-06-22 23:38:30,087 :: root         :: DEBUG    :: Input parameters:
+2016-06-22 23:38:30,088 :: root         :: DEBUG    :: 	info	False
+2016-06-22 23:38:30,089 :: root         :: DEBUG    :: 	verbose	False
+2016-06-22 23:38:30,089 :: root         :: DEBUG    :: 	port	/dev/ttyACM0
+2016-06-22 23:38:30,090 :: root         :: DEBUG    :: 	server	None
+2016-06-22 23:38:30,090 :: root         :: DEBUG    :: 	quiet	False
+2016-06-22 23:38:30,091 :: root         :: DEBUG    :: 	qquiet	False
+2016-06-22 23:38:30,093 :: root         :: INFO     :: Establishing new connection
+2016-06-22 23:38:31,003 :: root         :: INFO     :: Received enquiry
+2016-06-22 23:38:31,004 :: root         :: INFO     :: Sending acknowledge
+2016-06-22 23:38:31,005 :: root         :: INFO     :: Awaiting acknowledge
+2016-06-22 23:38:31,012 :: root         :: INFO     :: Received acknowledgement
+2016-06-22 23:38:31,013 :: root         :: INFO     :: Success in 0.919306 sec
+2016-06-22 23:38:31,709 :: root         :: DEBUG    :: Handling: {"GTYP":"Stream","SWPH 1":4.9,"SWEC 1":0.0,"SWTM 1":0.0,"SLIN 1":10,"SLPA 1":0.24,"SATM 1":20.9,"SAHU 1":47.8,"SACO 1":441,"SATM 2":27.0,"SAHU 2":0.0,"SGSO 1":0,"SGWO 1":0,"AAHE 1":0,"AAHU 1":0,"AAVE 1":1,"AACR 1":1,"ALPN 1":0,"ALPN 2":0,"ALMI 1":1,"GEND":0}
+2016-06-22 23:40:07,698 :: root         :: ERROR    :: Buffer overflow! Serial available 4001. Purging
+2016-06-22 23:40:07,706 :: root         :: DEBUG    :: Handling: {"GTYP":"Stream","SWPH 1":-2.6,"SWEC 1":0.0,"SWTM 1":20.3,"SLIN 1":10,"SLPA 1":0.24,"SATM 1":21.0,"SAHU 1":47.7,"SACO 1":426,"SATM 2":27.0,"SAHU 2":0.0,"SGSO 1":0,"SGWO 1":0,"AAHE 1":0,"AAHU 1":0,"AAVE 1":1,"AACR 1":1,"ALPN 1":0,"ALPN 2":0,"ALMI 1":1,"GEND":0}
