@@ -114,34 +114,9 @@ if __name__ == "__main__":
 	
 	#Create a "Variable" object
 	
-	temperatureID 	= "5769a9917625424ca5ed3f29"
-	humidityID 	= "5769b8da7625425365cb2d73"
 	floraBoxID	= "5769a92d762542486fedcaa9"
 	
 	floraBox= api.get_datasource (floraBoxID)
-
-#	AACRa=floraBox.create_variable({"name":"AACR 1","unit":""})
-#	AAHEa=floraBox.create_variable({"name":"AAHE 1","unit":""})
-#	AAHUa=floraBox.create_variable({"name":"AAHU 1","unit":""}) 
-#	AAVEa=floraBox.create_variable({"name":"AAVE 1","unit":""}) 
-#	ALMIa=floraBox.create_variable({"name":"ALMI 1","unit":""}) 
-#	ALPNa=floraBox.create_variable({"name":"ALPN 1","unit":""})
-#	ALPNb=floraBox.create_variable({"name":"ALPN 2","unit":""}) 
-#	GEND =floraBox.create_variable({"name":"GEND","unit":""})
-#	GTYP =floraBox.create_variable({"name":"GTYP","unit":""}) 
-#	SACOa=floraBox.create_variable({"name":"SACO 1","unit":""})
-#	SAHUa=floraBox.create_variable({"name":"SAHU 1","unit":""})
-#	SAHUb=floraBox.create_variable({"name":"SAHU 2","unit":""})
-#	SATMa=floraBox.create_variable({"name":"SATM 1","unit":""})
-#	SATMb=floraBox.create_variable({"name":"SATM 2","unit":""})
-#	SGSOa=floraBox.create_variable({"name":"SGSO 1","unit":""})
-#	SGWOa=floraBox.create_variable({"name":"SGWO 1","unit":""})
-#	SLINa=floraBox.create_variable({"name":"SLIN 1","unit":""})
-#	SLPAa=floraBox.create_variable({"name":"SLPA 1","unit":""})
-#	SWECa=floraBox.create_variable({"name":"SWEC 1","unit":""})
-#	SWPHa=floraBox.create_variable({"name":"SWPH 1","unit":""})
-#	SWTMa=floraBox.create_variable({"name":"SWTM 1","unit":""})
-
 
 	while 1:
 		message = groduino.receive(blocking=True)
@@ -157,39 +132,13 @@ if __name__ == "__main__":
 		
 		message_count += 1
 		variablesFB=floraBox.get_variables()
-                api.save_collection([{"variable":variablesFB[0].id,"value":message_dict["AACR 1"]},
-                                     {"variable":variablesFB[1].id,"value":message_dict["AAHE 1"]},
-                                     {"variable":variablesFB[2].id,"value":message_dict["AAHU 1"]},
-                                     {"variable":variablesFB[3].id,"value":message_dict["AAVE 1"]},
-                                     {"variable":variablesFB[4].id,"value":message_dict["ALMI 1"]},
-                                     {"variable":variablesFB[5].id,"value":message_dict["ALPN 1"]},
-                                     {"variable":variablesFB[6].id,"value":message_dict["ALPN 2"]},
-                                     {"variable":variablesFB[7].id,"value":message_dict["GEND"]},
-                                     {"variable":variablesFB[8].id,"value":message_dict["GTYP"]},
-                                     {"variable":variablesFB[9].id,"value":message_dict["SACO 1"]},
-                                     {"variable":variablesFB[10].id,"value":message_dict["SAHU 1"]},
-                                     {"variable":variablesFB[11].id,"value":message_dict["SAHU 2"]},
-                                     {"variable":variablesFB[12].id,"value":message_dict["SATM 1"]},
-                                     {"variable":variablesFB[13].id,"value":message_dict["SATM 2"]},
-                                     {"variable":variablesFB[14].id,"value":message_dict["SGSO 1"]},
-                                     {"variable":variablesFB[15].id,"value":message_dict["SGWO 1"]},
-                                     {"variable":variablesFB[16].id,"value":message_dict["SLIN 1"]},
-                                     {"variable":variablesFB[17].id,"value":message_dict["SLPA 1"]},
-                                     {"variable":variablesFB[18].id,"value":message_dict["SWEC 1"]},
-                                     {"variable":variablesFB[19].id,"value":message_dict["SWPH 1"]},
-                                     {"variable":variablesFB[20].id,"value":message_dict["SWTM 1"]}])
+		data=[]
+		for x in range(0,len(variablesFB)):
+                    data.insert(0,{'variable':variablesFB[x].id,'value':message_dict[variablesFB[x].name]})
+                api.save_collection(data)
 
-		print ("message:")
-		print ("",message)
-		print ("JSON")
-		print ("",message_dict)
-		pprint(message_dict)
-		print(message_dict["AACR 1"])
 		time.sleep(30)
 
-#    server = Server(cmdargs_dict['server'])
-#    bot = Bot(groduino, server)
 
-#    bot.run()
 
-{"AACR 1":1,"AAHE 1":2,"AAHU 1":3,"AAVE 1":4,"ALMI 1":5,"ALPN 1":6,"ALPN 2":7,"GEND":8,"GTYP":9,"SACO 1":10,"SAHU 1":11,"SAHU 2":12,"SATM 1":13,"SATM 2":14,"SGSO 1":15,"SGWO 1":16,"SLIN 1":18,"SLPA 1":17,"SWEC 1":19,"SWPH 1":20,"SWTM 1":21}
+#{"AACR 1":1,"AAHE 1":2,"AAHU 1":3,"AAVE 1":4,"ALMI 1":5,"ALPN 1":6,"ALPN 2":7,"GEND":8,"GTYP":9,"SACO 1":10,"SAHU 1":11,"SAHU 2":12,"SATM 1":13,"SATM 2":14,"SGSO 1":15,"SGWO 1":16,"SLIN 1":18,"SLPA 1":17,"SWEC 1":19,"SWPH 1":20,"SWTM 1":21}
