@@ -110,13 +110,13 @@ if __name__ == "__main__":
 	groduino = hwInit(port=cmdargs_dict['port'], serial_parameters=serial_params)
 	# TODO just init the server inside bot. Bot should take ip of server to connect to
 	
-	api = ApiClient(token='RBgwxE0fSTaFS7IH7EqIya2Nl6yVek')
+	api = ApiClient(token='RBgwxE0fSTaFS7IH7EqIya2Nl6yVek') #TODO leer desde txt
 	
 	#Create a "Variable" object
 	
 	floraBoxID	= "5769a92d762542486fedcaa9"
 	
-	floraBox= api.get_datasource (floraBoxID)
+	floraBox= api.get_datasource (floraBoxID)      #TODO leer desde txt
 
 	while 1:
 		message = groduino.receive(blocking=True)
