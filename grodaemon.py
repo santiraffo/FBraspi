@@ -114,9 +114,9 @@ if __name__ == "__main__":
 	
 	#Create a "Variable" object
 	
-	floraBoxID	= "5769a92d762542486fedcaa9"
+	floraBoxID	= "5769a92d762542486fedcaa9" #TODO leer desde txt
 	
-	floraBox= api.get_datasource (floraBoxID)      #TODO leer desde txt
+	floraBox= api.get_datasource (floraBoxID)      
 
 	while 1:
 		message = groduino.receive(blocking=True)
