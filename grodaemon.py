@@ -114,14 +114,14 @@ if __name__ == "__main__":
 	
 	#Create a "Variable" object
 
+	datas= api.get_datasources ()      
+
         dic={datas[0].name:datas[0],datas[1].name:datas[1],datas[2].name:datas[2]} # learning not to use Switchs fking Py...
 
         ctrlActFloraBox=dic['Ctrl Actuators floraBox']
         ctrlVarFloraBox=dic['Ctrl floraBox']
         varFloraBox=dic['Variables floraBox']
         
-	floraBox= api.get_datasources ()      
-
 	while 1:
 		message = groduino.receive(blocking=True)
 		if not message:
@@ -135,7 +135,7 @@ if __name__ == "__main__":
 			logging.debug('',exc_info=True)
 		
 		message_count += 1
-		variablesFB=floraBox.get_variables()
+		variablesFB=varFloraBox.get_variables()
 		data=[]
 		for x in range(0,len(variablesFB)):
                     data.insert(0,{'variable':variablesFB[x].id,'value':message_dict[variablesFB[x].description]})
