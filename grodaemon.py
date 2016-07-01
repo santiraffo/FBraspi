@@ -113,10 +113,14 @@ if __name__ == "__main__":
 	api = ApiClient(token='RBgwxE0fSTaFS7IH7EqIya2Nl6yVek') #TODO leer desde txt
 	
 	#Create a "Variable" object
-	
-	floraBoxID	= "5769a92d762542486fedcaa9" #TODO leer desde txt
-	
-	floraBox= api.get_datasource (floraBoxID)      
+
+        dic={datas[0].name:datas[0],datas[1].name:datas[1],datas[2].name:datas[2]} # learning not to use Switchs fking Py...
+
+        ctrlActFloraBox=dic['Ctrl Actuators floraBox']
+        ctrlVarFloraBox=dic['Ctrl floraBox']
+        varFloraBox=dic['Variables floraBox']
+        
+	floraBox= api.get_datasources ()      
 
 	while 1:
 		message = groduino.receive(blocking=True)
@@ -134,7 +138,7 @@ if __name__ == "__main__":
 		variablesFB=floraBox.get_variables()
 		data=[]
 		for x in range(0,len(variablesFB)):
-                    data.insert(0,{'variable':variablesFB[x].id,'value':message_dict[variablesFB[x].name]})
+                    data.insert(0,{'variable':variablesFB[x].id,'value':message_dict[variablesFB[x].description]})
                 api.save_collection(data)
 
 		time.sleep(30)
